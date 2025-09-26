@@ -8,7 +8,7 @@
   "data": [
     {
       "name": "source_0",
-      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/ne_10m_admin_1_states_provinces.json",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/main/data/ne_10m_admin_1_states_provinces.json",
       "format": {
         "type": "topojson",
         "feature": "ne_10m_admin_1_states_provinces"
@@ -16,12 +16,12 @@
     },
     {
       "name": "source_1",
-      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/main/data/ne_110m_graticules_5.json",
-      "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/ne_10m_graticules_5.json",
+      "format": {"type": "topojson", "feature": "ne_10m_graticules_5"}
     },
     {
       "name": "source_2",
-      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/myhosp-mapping-details-extract.csv",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/main/data/myhosp-mapping-details-extract.csv",
       "format": {"type": "csv", "delimiter": ","},
       "transform": [
         {
@@ -39,7 +39,7 @@
       "translate": {"signal": "[width / 2, height / 2]"},
       "type": "mercator",
       "center": [133, -27],
-      "scale": 700
+      "scale": 500
     }
   ],
   "marks": [
@@ -88,11 +88,11 @@
           "size": {"value": 50},
           "fill": {"value": "#2c7fb8"},
           "tooltip": {
-            "signal": "isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"]"
+            "signal": "{\"Name\": isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"], \"State\": isValid(datum[\"State\"]) ? datum[\"State\"] : \"\"+datum[\"State\"]}"
           },
           "ariaRoleDescription": {"value": "circle"},
           "description": {
-            "signal": "\"Longitude: \" + (format(datum[\"Longitude\"], \"\")) + \"; Latitude: \" + (format(datum[\"Latitude\"], \"\")) + \"; Name: \" + (isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"])"
+            "signal": "\"Longitude: \" + (format(datum[\"Longitude\"], \"\")) + \"; Latitude: \" + (format(datum[\"Latitude\"], \"\")) + \"; Name: \" + (isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"]) + \"; State: \" + (isValid(datum[\"State\"]) ? datum[\"State\"] : \"\"+datum[\"State\"])"
           },
           "x": {"field": "layer_2_x"},
           "y": {"field": "layer_2_y"},
