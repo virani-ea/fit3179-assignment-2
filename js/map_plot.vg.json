@@ -39,7 +39,7 @@
       "translate": {"signal": "[width / 2, height / 2]"},
       "type": "mercator",
       "center": [133, -27],
-      "scale": 500
+      "scale": 550
     }
   ],
   "marks": [
@@ -84,8 +84,8 @@
       "from": {"data": "source_2"},
       "encode": {
         "update": {
-          "opacity": {"value": 0.7},
-          "size": {"value": 50},
+          "opacity": {"value": 0.6},
+          "size": {"value": 10},
           "fill": {"value": "#2c7fb8"},
           "tooltip": {
             "signal": "{\"Name\": isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"], \"State\": isValid(datum[\"State\"]) ? datum[\"State\"] : \"\"+datum[\"State\"]}"
