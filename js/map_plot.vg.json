@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "background": "white",
+  "padding": 5,
+  "width": 600,
+  "height": 400,
+  "style": "view",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/ne_10m_admin_1_states_provinces.json",
+      "format": {
+        "type": "topojson",
+        "feature": "ne_10m_admin_1_states_provinces"
+      }
+    },
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/main/data/ne_110m_graticules_5.json",
+      "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+    },
+    {
+      "name": "source_2",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/myhosp-mapping-details-extract.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["Longitude", "Latitude"],
+          "as": ["layer_2_x", "layer_2_y"]
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "translate": {"signal": "[width / 2, height / 2]"},
+      "type": "mercator",
+      "center": [133, -27],
+      "scale": 700
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "shape",
+      "clip": true,
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "fill": {"value": "lightgray"},
+          "stroke": {"value": "grey"},
+          "strokeWidth": {"value": 0.5},
+          "ariaRoleDescription": {"value": "geoshape"}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "shape",
+      "clip": true,
+      "style": ["geoshape"],
+      "from": {"data": "source_1"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.5},
+          "stroke": {"value": "#7fcdbb"},
+          "strokeWidth": {"value": 0.5},
+          "fill": {"value": "#4c78a8"},
+          "ariaRoleDescription": {"value": "geoshape"}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "name": "layer_2_marks",
+      "type": "symbol",
+      "clip": true,
+      "style": ["circle"],
+      "from": {"data": "source_2"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "size": {"value": 50},
+          "fill": {"value": "#2c7fb8"},
+          "tooltip": {
+            "signal": "isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"]"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Longitude: \" + (format(datum[\"Longitude\"], \"\")) + \"; Latitude: \" + (format(datum[\"Latitude\"], \"\")) + \"; Name: \" + (isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"])"
+          },
+          "x": {"field": "layer_2_x"},
+          "y": {"field": "layer_2_y"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
