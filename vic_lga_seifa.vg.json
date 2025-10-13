@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Choropleth of SEIFA (IRSD) by LGA in Victoria",
+  "background": "white",
+  "padding": 5,
+  "width": 550,
+  "height": 650,
+  "style": "view",
+  "data": [
+    {"name": "decile_filter_store"},
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/lga_seifa_indexes.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/lga_vic_boundaries.json",
+      "format": {"type": "topojson", "feature": "LGA_2025_AUST_GDA2020"},
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "source_1",
+          "key": "LGA_code",
+          "fields": ["properties.LGA_CODE25"],
+          "values": ["LGA_name", "Score", "Decile"]
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "data('source_0')"},
+      "type": "mercator"
+    }
+  ],
+  "signals": [
+    {
+      "name": "unit",
+      "value": {},
+      "on": [
+        {"events": "pointermove", "update": "isTuple(group()) ? group() : unit"}
+      ]
+    },
+    {
+      "name": "decile_filter_Decile_legend",
+      "value": null,
+      "on": [
+        {
+          "events": [
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "Decile_legend_symbols"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "Decile_legend_labels"
+            },
+            {
+              "source": "view",
+              "type": "click",
+              "markname": "Decile_legend_entries"
+            }
+          ],
+          "update": "isDefined(datum.value) ? datum.value : item().items[0].items[0].datum.value",
+          "force": true
+        },
+        {
+          "events": [{"source": "view", "type": "click"}],
+          "update": "!event.item || !datum ? null : decile_filter_Decile_legend",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "decile_filter",
+      "update": "vlSelectionResolve(\"decile_filter_store\", \"union\", true, true)"
+    },
+    {
+      "name": "decile_filter_tuple",
+      "update": "decile_filter_Decile_legend !== null ? {fields: decile_filter_tuple_fields, values: [decile_filter_Decile_legend]} : null"
+    },
+    {
+      "name": "decile_filter_tuple_fields",
+      "value": [{"type": "E", "field": "Decile"}]
+    },
+    {
+      "name": "decile_filter_toggle",
+      "value": false,
+      "on": [
+        {
+          "events": {"merge": [{"source": "view", "type": "click"}]},
+          "update": "event.shiftKey"
+        }
+      ]
+    },
+    {
+      "name": "decile_filter_modify",
+      "on": [
+        {
+          "events": {"signal": "decile_filter_tuple"},
+          "update": "modify(\"decile_filter_store\", decile_filter_toggle ? null : decile_filter_tuple, decile_filter_toggle ? null : true, decile_filter_toggle ? decile_filter_tuple : null)"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "interactive": true,
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "fill": {"scale": "color", "field": "Decile"},
+          "opacity": [
+            {
+              "test": "!length(data(\"decile_filter_store\")) || vlSelectionTest(\"decile_filter_store\", datum)",
+              "value": 1
+            },
+            {"value": 0.1}
+          ],
+          "tooltip": {
+            "signal": "{\"LGA\": isValid(datum[\"LGA_name\"]) ? datum[\"LGA_name\"] : \"\"+datum[\"LGA_name\"], \"IRSD Score\": format(datum[\"Score\"], \"\"), \"IRSD Decile\": isValid(datum[\"Decile\"]) ? datum[\"Decile\"] : \"\"+datum[\"Decile\"]}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"Decile: \" + (isValid(datum[\"Decile\"]) ? datum[\"Decile\"] : \"\"+datum[\"Decile\"]) + \"; LGA: \" + (isValid(datum[\"LGA_name\"]) ? datum[\"LGA_name\"] : \"\"+datum[\"LGA_name\"]) + \"; IRSD Score: \" + (format(datum[\"Score\"], \"\")) + \"; IRSD Decile: \" + (isValid(datum[\"Decile\"]) ? datum[\"Decile\"] : \"\"+datum[\"Decile\"])"
+          }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      "range": {"scheme": "blues"},
+      "interpolate": "hcl"
+    }
+  ],
+  "legends": [
+    {
+      "title": "SEIFA IRSD Decile",
+      "fill": "color",
+      "symbolType": "circle",
+      "encode": {
+        "labels": {
+          "name": "Decile_legend_labels",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"decile_filter_store\")) || (decile_filter[\"Decile\"] && indexof(decile_filter[\"Decile\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "symbols": {
+          "name": "Decile_legend_symbols",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {
+                "test": "(!length(data(\"decile_filter_store\")) || (decile_filter[\"Decile\"] && indexof(decile_filter[\"Decile\"], datum.value) >= 0))",
+                "value": 1
+              },
+              {"value": 0.35}
+            ]
+          }
+        },
+        "entries": {
+          "name": "Decile_legend_entries",
+          "interactive": true,
+          "update": {"fill": {"value": "transparent"}}
+        }
+      }
+    }
+  ],
+  "config": {}
+}

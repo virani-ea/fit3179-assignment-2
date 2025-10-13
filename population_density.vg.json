@@ -1,0 +1,127 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Choropleth map of Australian population density by SA3, overlaying hospital locations.",
+  "background": "white",
+  "padding": 5,
+  "width": 500,
+  "height": 410,
+  "style": "view",
+  "data": [
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/sa3_population_density.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/sa3_boundaries.json",
+      "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"},
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "source_1",
+          "key": "SA3_Code",
+          "fields": ["properties.SA3_CODE21"],
+          "values": ["Avg_Pop_Density"]
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Avg_Pop_Density\"]) && isFinite(+datum[\"Avg_Pop_Density\"])"
+        }
+      ]
+    },
+    {
+      "name": "source_2",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/myhosp-mapping-details-extract.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["Longitude", "Latitude"],
+          "as": ["layer_1_x", "layer_1_y"]
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "translate": {"signal": "[width / 2, height / 2]"},
+      "type": "mercator",
+      "scale": 10000,
+      "center": [144.96, -37.8]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "shape",
+      "clip": true,
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "fill": {"scale": "color", "field": "Avg_Pop_Density"},
+          "tooltip": {
+            "signal": "{\"Pop Density (/km²)\": format(datum[\"Avg_Pop_Density\"], \"\")}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"Avg_Pop_Density: \" + (format(datum[\"Avg_Pop_Density\"], \"\")) + \"; Pop Density (/km²): \" + (format(datum[\"Avg_Pop_Density\"], \"\"))"
+          }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "clip": true,
+      "style": ["circle"],
+      "from": {"data": "source_2"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.85},
+          "fill": {"value": "#e74c3c"},
+          "tooltip": {
+            "signal": "{\"Hospital\": isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"], \"Type\": isValid(datum[\"Type\"]) ? datum[\"Type\"] : \"\"+datum[\"Type\"], \"State\": isValid(datum[\"State\"]) ? datum[\"State\"] : \"\"+datum[\"State\"]}"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Longitude: \" + (format(datum[\"Longitude\"], \"\")) + \"; Latitude: \" + (format(datum[\"Latitude\"], \"\")) + \"; Hospital: \" + (isValid(datum[\"Name\"]) ? datum[\"Name\"] : \"\"+datum[\"Name\"]) + \"; Type: \" + (isValid(datum[\"Type\"]) ? datum[\"Type\"] : \"\"+datum[\"Type\"]) + \"; State: \" + (isValid(datum[\"State\"]) ? datum[\"State\"] : \"\"+datum[\"State\"])"
+          },
+          "x": {"field": "layer_1_x"},
+          "y": {"field": "layer_1_y"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "threshold",
+      "domain": [10, 50, 250, 1250, 2000, 3000],
+      "range": [
+        "#deebf7",
+        "#9ecae1",
+        "#6baed6",
+        "#3182bd",
+        "#08519c",
+        "#08306b",
+        "#041f4a"
+      ],
+      "interpolate": "hcl"
+    }
+  ],
+  "legends": [
+    {
+      "title": "Pop Density (/km²)",
+      "fill": "color",
+      "labelOverlap": "greedy",
+      "symbolType": "circle"
+    }
+  ],
+  "config": {}
+}

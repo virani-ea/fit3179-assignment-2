@@ -2,20 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vega-Lite Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthcare Access in Victoria</title>
+
+  <link rel="stylesheet" href="style.css" />
+
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <script src="scripts.js"></script>
 </head>
 <body>
-  <h2>Hospital Distributions in Australia as of 2025</h2>
-  <div id="map-vis"></div>
-  <script>
-    vegaEmbed('#map-vis', 'js/map_plot.vg.json')
-      .then(result => console.log('Vega-Lite visualization loaded'))
-      .catch(console.error);
-  </script>
+  <div class="container">
+    <header>
+      <h1>Mapping Healthcare Access in Victoria</h1>
+      <p>Are hospitals located where people live? How do socioeconomic factors influence healthcare equity?</p>
+    </header>
+
+    <!-- Visualisation 1: Population Density + Hospitals -->
+    <div class="vis-container">
+      <h2>1. Population Density and Hospital Locations</h2>
+      <div class="flex-row">
+        <div id="vis1"></div>
+        <div> It is evident that the majority of hospitals are 
+          positioned in or near high-density regions, supporting
+          health service accessibility in populous urban zones.
+          However, the map also reveals large, low-density areas
+          with few or no hospitals, raising questions about healthcare
+          access for rural communities. These spatial insights prompt
+          further investigation into service availability and equity
+          outside major cities. </div>
+      </div>
+    </div>
+
+    <!-- Visualisation 2: SEIFA Disadvantage -->
+    <div class="vis-container">
+      <h2>2. Socioeconomic Disadvantage in Victoria</h2>
+      <div class="flex-row">
+        <div id="vis2"></div>
+        <p>
+          The distribution of disadvantage varies across Victoria, seen in both metro and rural LGAs.
+          Cross-referencing with hospital locations can reveal mismatches between need and access.<br>
+          <strong>Are the most disadvantaged areas those with least hospital proximity?<br></strong><br>
+          Click on decile values to explore regions by socioeconomic score.<br>
+          Score 1 means most disadvantaged, while score 10 means least disadvantaged.<br>
+        </p>
+      </div>
+    </div>
+
+    <!-- Visualisation 3: Hospital Counts by State -->
+    <div class="vis-container">
+      <h2>3. How does other states compare on average?</h2>
+      <div id="vis3"></div>
+    </div>
+
+    <!-- Visualisation 4: SEIFA vs Hospital Density -->
+    <!-- <div class="vis-container">
+      <h2>4. SEIFA Score vs Hospital Density</h2>
+      <div id="vis4"></div>
+    </div> -->
+
+    <!-- Visualisation 5: Admissions Over Time -->
+    <!-- <div class="vis-container">
+      <h2>5. Hospital Admissions Over Time</h2>
+      <div id="vis5"></div>
+    </div> -->
+
+    <footer>
+      <p>Author: Virani Aboetan. <br>
+        Data sources: AIHW MyHospitals API, ABS Census, SEIFA. <br>
+        Visualisation built with Vega-Lite.</p>
+    </footer>
+  </div>
 </body>
-
 </html>
-
