@@ -33,7 +33,7 @@
       "name": "projection",
       "size": {"signal": "[width, height]"},
       "fit": {"signal": "data('source_0')"},
-      "type": "mercator"
+      "type": "mercator"    
     }
   ],
   "signals": [
@@ -142,7 +142,7 @@
       "name": "color",
       "type": "ordinal",
       "domain": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-      "range": {"scheme": "blues"},
+      "range": {"scheme": "purples"},
       "interpolate": "hcl"
     }
   ],
