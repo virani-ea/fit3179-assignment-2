@@ -1,0 +1,401 @@
+﻿LGA,Quarter,90th_Percentile,Median,LGA_Code,Decile
+Alpine (S),Apr - Jun 2024,N.P.,N.P.,20110,9
+Alpine (S),Jul - Sep 2024,N.P.,N.P.,20110,9
+Alpine (S),Oct - Dec 2024,N.P.,N.P.,20110,9
+Alpine (S),Jan - Mar 2025,N.P.,N.P.,20110,9
+Alpine (S),Apr - Jun 2025,N.P.,N.P.,20110,9
+Ararat (RC),Apr - Jun 2024,*,*,20260,4
+Ararat (RC),Jul - Sep 2024,N.P.,N.P.,20260,4
+Ararat (RC),Oct - Dec 2024,N.P.,N.P.,20260,4
+Ararat (RC),Jan - Mar 2025,N.P.,N.P.,20260,4
+Ararat (RC),Apr - Jun 2025,N.P.,N.P.,20260,4
+Ballarat (C),Apr - Jun 2024,16.32,8.55,20570,6
+Ballarat (C),Jul - Sep 2024,14.73,8.84,20570,6
+Ballarat (C),Oct - Dec 2024,17.16,10.25,20570,6
+Ballarat (C),Jan - Mar 2025,14.42,8.76,20570,6
+Ballarat (C),Apr - Jun 2025,15.23,8.85,20570,6
+Banyule (C),Apr - Jun 2024,16.16,7.75,20660,10
+Banyule (C),Jul - Sep 2024,11,8.05,20660,10
+Banyule (C),Oct - Dec 2024,13,8.38,20660,10
+Banyule (C),Jan - Mar 2025,15.99,8.33,20660,10
+Banyule (C),Apr - Jun 2025,11.87,7.42,20660,10
+Bass Coast (S),Apr - Jun 2024,23.32,8.69,20740,7
+Bass Coast (S),Jul - Sep 2024,16.91,8.98,20740,7
+Bass Coast (S),Oct - Dec 2024,16.22,9.38,20740,7
+Bass Coast (S),Jan - Mar 2025,29.47,10.15,20740,7
+Bass Coast (S),Apr - Jun 2025,20.62,12.75,20740,7
+Baw Baw (S),Apr - Jun 2024,20.27,10.2,20830,7
+Baw Baw (S),Jul - Sep 2024,15.16,10.53,20830,7
+Baw Baw (S),Oct - Dec 2024,21.15,9.13,20830,7
+Baw Baw (S),Jan - Mar 2025,26.52,12.33,20830,7
+Baw Baw (S),Apr - Jun 2025,16.08,9.22,20830,7
+Bayside (C),Apr - Jun 2024,11.9,7.23,20910,10
+Bayside (C),Jul - Sep 2024,14.29,8.77,20910,10
+Bayside (C),Oct - Dec 2024,12.74,9.61,20910,10
+Bayside (C),Jan - Mar 2025,26.01,8.95,20910,10
+Bayside (C),Apr - Jun 2025,13.56,8.45,20910,10
+Benalla (RC),Apr - Jun 2024,17.8,10.79,21010,5
+Benalla (RC),Jul - Sep 2024,N.P.,N.P.,21010,5
+Benalla (RC),Oct - Dec 2024,N.P.,N.P.,21010,5
+Benalla (RC),Jan - Mar 2025,14.21,9.58,21010,5
+Benalla (RC),Apr - Jun 2025,12.51,7.78,21010,5
+Boroondara (C),Apr - Jun 2024,14.63,9.54,21110,10
+Boroondara (C),Jul - Sep 2024,12.32,8.47,21110,10
+Boroondara (C),Oct - Dec 2024,13.38,8.47,21110,10
+Boroondara (C),Jan - Mar 2025,14.56,8.62,21110,10
+Boroondara (C),Apr - Jun 2025,11.42,8.13,21110,10
+Brimbank (C),Apr - Jun 2024,15.51,8.68,21180,2
+Brimbank (C),Jul - Sep 2024,13.93,8.48,21180,2
+Brimbank (C),Oct - Dec 2024,14.79,8.12,21180,2
+Brimbank (C),Jan - Mar 2025,14.18,9.13,21180,2
+Brimbank (C),Apr - Jun 2025,13.46,8.05,21180,2
+Buloke (S),Apr - Jun 2024,N.P.,N.P.,21270,5
+Buloke (S),Jul - Sep 2024,N.P.,N.P.,21270,5
+Buloke (S),Oct - Dec 2024,N.P.,N.P.,21270,5
+Buloke (S),Jan - Mar 2025,N.P.,N.P.,21270,5
+Buloke (S),Apr - Jun 2025,N.P.,N.P.,21270,5
+Campaspe (S),Apr - Jun 2024,26.38,15.77,21370,4
+Campaspe (S),Jul - Sep 2024,26.47,12.73,21370,4
+Campaspe (S),Oct - Dec 2024,14.44,9.37,21370,4
+Campaspe (S),Jan - Mar 2025,35.3,9.82,21370,4
+Campaspe (S),Apr - Jun 2025,26.53,13,21370,4
+Cardinia (S),Apr - Jun 2024,27.11,11.02,21450,8
+Cardinia (S),Jul - Sep 2024,25.71,10.83,21450,8
+Cardinia (S),Oct - Dec 2024,28.88,12.95,21450,8
+Cardinia (S),Jan - Mar 2025,17.24,9.29,21450,8
+Cardinia (S),Apr - Jun 2025,21.91,10.73,21450,8
+Casey (C),Apr - Jun 2024,18.7,10.18,21610,7
+Casey (C),Jul - Sep 2024,16.29,9.17,21610,7
+Casey (C),Oct - Dec 2024,19.02,9.81,21610,7
+Casey (C),Jan - Mar 2025,15.56,9.12,21610,7
+Casey (C),Apr - Jun 2025,17.52,9.3,21610,7
+Central Goldfields (S),Apr - Jun 2024,23.97,12.3,21670,2
+Central Goldfields (S),Jul - Sep 2024,25.57,14.6,21670,2
+Central Goldfields (S),Oct - Dec 2024,39.62,11.96,21670,2
+Central Goldfields (S),Jan - Mar 2025,N.P.,N.P.,21670,2
+Central Goldfields (S),Apr - Jun 2025,N.P.,N.P.,21670,2
+Colac-Otway (S),Apr - Jun 2024,23.23,12.73,21750,5
+Colac-Otway (S),Jul - Sep 2024,27.72,11.58,21750,5
+Colac-Otway (S),Oct - Dec 2024,21.03,11.83,21750,5
+Colac-Otway (S),Jan - Mar 2025,N.P.,N.P.,21750,5
+Colac-Otway (S),Apr - Jun 2025,24.03,10.77,21750,5
+Corangamite (S),Apr - Jun 2024,N.P.,N.P.,21830,6
+Corangamite (S),Jul - Sep 2024,N.P.,N.P.,21830,6
+Corangamite (S),Oct - Dec 2024,N.P.,N.P.,21830,6
+Corangamite (S),Jan - Mar 2025,N.P.,N.P.,21830,6
+Corangamite (S),Apr - Jun 2025,17.29,14.38,21830,6
+Darebin (C),Apr - Jun 2024,15.36,8.05,21890,8
+Darebin (C),Jul - Sep 2024,14.12,8.38,21890,8
+Darebin (C),Oct - Dec 2024,12.63,7.46,21890,8
+Darebin (C),Jan - Mar 2025,14.02,7.47,21890,8
+Darebin (C),Apr - Jun 2025,11.69,7.84,21890,8
+East Gippsland (S),Apr - Jun 2024,31.88,12.65,22110,4
+East Gippsland (S),Jul - Sep 2024,20.17,11.97,22110,4
+East Gippsland (S),Oct - Dec 2024,28.26,10.98,22110,4
+East Gippsland (S),Jan - Mar 2025,32.64,11.93,22110,4
+East Gippsland (S),Apr - Jun 2025,22.68,11.63,22110,4
+Frankston (C),Apr - Jun 2024,16.02,9.28,22170,7
+Frankston (C),Jul - Sep 2024,14.93,8.3,22170,7
+Frankston (C),Oct - Dec 2024,13.23,8.5,22170,7
+Frankston (C),Jan - Mar 2025,13.74,7.92,22170,7
+Frankston (C),Apr - Jun 2025,16.66,8.35,22170,7
+Gannawarra (S),Apr - Jun 2024,28.18,12.28,22250,4
+Gannawarra (S),Jul - Sep 2024,N.P.,N.P.,22250,4
+Gannawarra (S),Oct - Dec 2024,N.P.,N.P.,22250,4
+Gannawarra (S),Jan - Mar 2025,N.P.,N.P.,22250,4
+Gannawarra (S),Apr - Jun 2025,N.P.,N.P.,22250,4
+Glen Eira (C),Apr - Jun 2024,13.71,8.23,22310,10
+Glen Eira (C),Jul - Sep 2024,12.18,8.3,22310,10
+Glen Eira (C),Oct - Dec 2024,12.6,9.03,22310,10
+Glen Eira (C),Jan - Mar 2025,12.93,8.33,22310,10
+Glen Eira (C),Apr - Jun 2025,18.56,8.4,22310,10
+Glenelg (S),Apr - Jun 2024,26.4,9.55,22410,4
+Glenelg (S),Jul - Sep 2024,39.26,9.03,22410,4
+Glenelg (S),Oct - Dec 2024,31.25,9.52,22410,4
+Glenelg (S),Jan - Mar 2025,N.P.,N.P.,22410,4
+Glenelg (S),Apr - Jun 2025,27.6,10.26,22410,4
+Golden Plains (S),Apr - Jun 2024,N.P.,N.P.,22490,9
+Golden Plains (S),Jul - Sep 2024,30.93,16.9,22490,9
+Golden Plains (S),Oct - Dec 2024,30.47,19.72,22490,9
+Golden Plains (S),Jan - Mar 2025,N.P.,N.P.,22490,9
+Golden Plains (S),Apr - Jun 2025,N.P.,N.P.,22490,9
+Greater Bendigo (C),Apr - Jun 2024,17.4,9.94,22620,6
+Greater Bendigo (C),Jul - Sep 2024,15.09,9.25,22620,6
+Greater Bendigo (C),Oct - Dec 2024,20.57,9.3,22620,6
+Greater Bendigo (C),Jan - Mar 2025,14.57,8.82,22620,6
+Greater Bendigo (C),Apr - Jun 2025,14.72,8.15,22620,6
+Greater Dandenong (C),Apr - Jun 2024,14.57,9.05,22670,2
+Greater Dandenong (C),Jul - Sep 2024,15.34,8.43,22670,2
+Greater Dandenong (C),Oct - Dec 2024,13.75,8.32,22670,2
+Greater Dandenong (C),Jan - Mar 2025,16.4,9.15,22670,2
+Greater Dandenong (C),Apr - Jun 2025,18.33,9.28,22670,2
+Greater Geelong (C),Apr - Jun 2024,15.48,9.68,22750,8
+Greater Geelong (C),Jul - Sep 2024,17.24,9.52,22750,8
+Greater Geelong (C),Oct - Dec 2024,13.57,8.93,22750,8
+Greater Geelong (C),Jan - Mar 2025,15.53,9.17,22750,8
+Greater Geelong (C),Apr - Jun 2025,17.8,9.35,22750,8
+Greater Shepparton (C),Apr - Jun 2024,13.36,9.39,22830,3
+Greater Shepparton (C),Jul - Sep 2024,18.54,8.82,22830,3
+Greater Shepparton (C),Oct - Dec 2024,17.95,9.05,22830,3
+Greater Shepparton (C),Jan - Mar 2025,16.64,7.81,22830,3
+Greater Shepparton (C),Apr - Jun 2025,14.42,7.7,22830,3
+Hepburn (S),Apr - Jun 2024,N.P.,N.P.,22910,8
+Hepburn (S),Jul - Sep 2024,N.P.,N.P.,22910,8
+Hepburn (S),Oct - Dec 2024,26.85,10.74,22910,8
+Hepburn (S),Jan - Mar 2025,N.P.,N.P.,22910,8
+Hepburn (S),Apr - Jun 2025,N.P.,N.P.,22910,8
+Hindmarsh (S),Apr - Jun 2024,N.P.,N.P.,22980,3
+Hindmarsh (S),Jul - Sep 2024,N.P.,N.P.,22980,3
+Hindmarsh (S),Oct - Dec 2024,N.P.,N.P.,22980,3
+Hindmarsh (S),Jan - Mar 2025,N.P.,N.P.,22980,3
+Hindmarsh (S),Apr - Jun 2025,N.P.,N.P.,22980,3
+Hobsons Bay (C),Apr - Jun 2024,17.9,10.37,23110,8
+Hobsons Bay (C),Jul - Sep 2024,13.91,8.64,23110,8
+Hobsons Bay (C),Oct - Dec 2024,24.87,9.82,23110,8
+Hobsons Bay (C),Jan - Mar 2025,18.52,8.77,23110,8
+Hobsons Bay (C),Apr - Jun 2025,16.15,9.5,23110,8
+Horsham (RC),Apr - Jun 2024,N.P.,N.P.,23190,6
+Horsham (RC),Jul - Sep 2024,N.P.,N.P.,23190,6
+Horsham (RC),Oct - Dec 2024,N.P.,N.P.,23190,6
+Horsham (RC),Jan - Mar 2025,18.95,8.28,23190,6
+Horsham (RC),Apr - Jun 2025,21.56,7.43,23190,6
+Hume (C),Apr - Jun 2024,19.71,10.86,23270,3
+Hume (C),Jul - Sep 2024,19.1,10.43,23270,3
+Hume (C),Oct - Dec 2024,17.95,10.37,23270,3
+Hume (C),Jan - Mar 2025,22.83,10.75,23270,3
+Hume (C),Apr - Jun 2025,19.67,10.58,23270,3
+Indigo (S),Apr - Jun 2024,N.P.,N.P.,23350,9
+Indigo (S),Jul - Sep 2024,N.P.,N.P.,23350,9
+Indigo (S),Oct - Dec 2024,N.P.,N.P.,23350,9
+Indigo (S),Jan - Mar 2025,N.P.,N.P.,23350,9
+Indigo (S),Apr - Jun 2025,N.P.,N.P.,23350,9
+Kingston (C),Apr - Jun 2024,15.98,9.4,23430,9
+Kingston (C),Jul - Sep 2024,14.94,8.87,23430,9
+Kingston (C),Oct - Dec 2024,13.83,8.93,23430,9
+Kingston (C),Jan - Mar 2025,14.77,8.32,23430,9
+Kingston (C),Apr - Jun 2025,13.32,9.55,23430,9
+Knox (C),Apr - Jun 2024,11.95,8.35,23670,9
+Knox (C),Jul - Sep 2024,12.93,8.12,23670,9
+Knox (C),Oct - Dec 2024,11.02,7.43,23670,9
+Knox (C),Jan - Mar 2025,14.62,8.12,23670,9
+Knox (C),Apr - Jun 2025,13.82,8.68,23670,9
+Latrobe (C),Apr - Jun 2024,15.67,7.47,23810,3
+Latrobe (C),Jul - Sep 2024,16.73,7.8,23810,3
+Latrobe (C),Oct - Dec 2024,14.03,8.37,23810,3
+Latrobe (C),Jan - Mar 2025,16.28,7.97,23810,3
+Latrobe (C),Apr - Jun 2025,18.13,8.27,23810,3
+Loddon (S),Apr - Jun 2024,N.P.,N.P.,23940,3
+Loddon (S),Jul - Sep 2024,N.P.,N.P.,23940,3
+Loddon (S),Oct - Dec 2024,N.P.,N.P.,23940,3
+Loddon (S),Jan - Mar 2025,N.P.,N.P.,23940,3
+Loddon (S),Apr - Jun 2025,N.P.,N.P.,23940,3
+Macedon Ranges (S),Apr - Jun 2024,20.29,13.68,24130,10
+Macedon Ranges (S),Jul - Sep 2024,23,10.12,24130,10
+Macedon Ranges (S),Oct - Dec 2024,17.52,10.82,24130,10
+Macedon Ranges (S),Jan - Mar 2025,19.9,11.53,24130,10
+Macedon Ranges (S),Apr - Jun 2025,21.42,12.39,24130,10
+Manningham (C),Apr - Jun 2024,12.91,8.09,24210,10
+Manningham (C),Jul - Sep 2024,14.47,8.72,24210,10
+Manningham (C),Oct - Dec 2024,14.78,8.65,24210,10
+Manningham (C),Jan - Mar 2025,16.41,9.1,24210,10
+Manningham (C),Apr - Jun 2025,12.15,8.17,24210,10
+Mansfield (S),Apr - Jun 2024,N.P.,N.P.,24250,9
+Mansfield (S),Jul - Sep 2024,N.P.,N.P.,24250,9
+Mansfield (S),Oct - Dec 2024,N.P.,N.P.,24250,9
+Mansfield (S),Jan - Mar 2025,N.P.,N.P.,24250,9
+Mansfield (S),Apr - Jun 2025,N.P.,N.P.,24250,9
+Maribyrnong (C),Apr - Jun 2024,15.2,9.22,24330,8
+Maribyrnong (C),Jul - Sep 2024,14.11,8.27,24330,8
+Maribyrnong (C),Oct - Dec 2024,15.91,9.44,24330,8
+Maribyrnong (C),Jan - Mar 2025,13.95,8.58,24330,8
+Maribyrnong (C),Apr - Jun 2025,23.77,8.53,24330,8
+Maroondah (C),Apr - Jun 2024,13.49,7.69,24410,9
+Maroondah (C),Jul - Sep 2024,12.5,8.44,24410,9
+Maroondah (C),Oct - Dec 2024,14.73,8.11,24410,9
+Maroondah (C),Jan - Mar 2025,14.08,7.5,24410,9
+Maroondah (C),Apr - Jun 2025,13.61,8.53,24410,9
+Melbourne (C),Apr - Jun 2024,12.72,7.25,24600,8
+Melbourne (C),Jul - Sep 2024,12.47,7.32,24600,8
+Melbourne (C),Oct - Dec 2024,16.43,7.42,24600,8
+Melbourne (C),Jan - Mar 2025,16.66,7.7,24600,8
+Melbourne (C),Apr - Jun 2025,12.91,6.67,24600,8
+Melton (S),Apr - Jun 2024,17.85,10.32,24650,6
+Melton (S),Jul - Sep 2024,17.58,10.56,24650,6
+Melton (S),Oct - Dec 2024,25.27,11.95,24650,6
+Melton (S),Jan - Mar 2025,18.07,10.47,24650,6
+Melton (S),Apr - Jun 2025,23.16,11.78,24650,6
+Mildura (RC),Apr - Jun 2024,13.07,7.72,24780,3
+Mildura (RC),Jul - Sep 2024,13.38,6.66,24780,3
+Mildura (RC),Oct - Dec 2024,11.41,7.43,24780,3
+Mildura (RC),Jan - Mar 2025,21.99,9.34,24780,3
+Mildura (RC),Apr - Jun 2025,15.51,8.72,24780,3
+Mitchell (S),Apr - Jun 2024,25.7,15.57,24850,7
+Mitchell (S),Jul - Sep 2024,15.89,8.18,24850,7
+Mitchell (S),Oct - Dec 2024,33.38,13.97,24850,7
+Mitchell (S),Jan - Mar 2025,33.33,15.31,24850,7
+Mitchell (S),Apr - Jun 2025,23.02,11.37,24850,7
+Moira (S),Apr - Jun 2024,26.4,20.2,24900,4
+Moira (S),Jul - Sep 2024,26.44,21.49,24900,4
+Moira (S),Oct - Dec 2024,25.7,8.38,24900,4
+Moira (S),Jan - Mar 2025,23.2,12.1,24900,4
+Moira (S),Apr - Jun 2025,27.05,9.38,24900,4
+Monash (C),Apr - Jun 2024,14.97,8.89,24970,9
+Monash (C),Jul - Sep 2024,15.72,9.2,24970,9
+Monash (C),Oct - Dec 2024,17.47,10.35,24970,9
+Monash (C),Jan - Mar 2025,14.75,8.75,24970,9
+Monash (C),Apr - Jun 2025,16.5,9.3,24970,9
+Moonee Valley (C),Apr - Jun 2024,14.9,9.65,25060,9
+Moonee Valley (C),Jul - Sep 2024,14.28,9.57,25060,9
+Moonee Valley (C),Oct - Dec 2024,19.46,10.23,25060,9
+Moonee Valley (C),Jan - Mar 2025,13.57,8.42,25060,9
+Moonee Valley (C),Apr - Jun 2025,12.4,8.28,25060,9
+Moorabool (S),Apr - Jun 2024,20.71,11.26,25150,8
+Moorabool (S),Jul - Sep 2024,17.85,12.12,25150,8
+Moorabool (S),Oct - Dec 2024,20.5,11.41,25150,8
+Moorabool (S),Jan - Mar 2025,24.89,14.7,25150,8
+Moorabool (S),Apr - Jun 2025,21.49,12.28,25150,8
+Moreland (C),Apr - Jun 2024,12.82,9.35,25250,8
+Moreland (C),Jul - Sep 2024,14.51,9.1,25250,8
+Moreland (C),Oct - Dec 2024,17.39,8.98,25250,8
+Moreland (C),Jan - Mar 2025,14.25,8.75,25250,8
+Moreland (C),Apr - Jun 2025,13.72,8.28,25250,8
+Mornington Peninsula (S),Apr - Jun 2024,14.8,9.8,25340,9
+Mornington Peninsula (S),Jul - Sep 2024,14.48,8.1,25340,9
+Mornington Peninsula (S),Oct - Dec 2024,19.56,9.25,25340,9
+Mornington Peninsula (S),Jan - Mar 2025,16.76,8.69,25340,9
+Mornington Peninsula (S),Apr - Jun 2025,14.73,9.1,25340,9
+Mount Alexander (S),Apr - Jun 2024,N.P.,N.P.,25430,8
+Mount Alexander (S),Jul - Sep 2024,N.P.,N.P.,25430,8
+Mount Alexander (S),Oct - Dec 2024,20,11.92,25430,8
+Mount Alexander (S),Jan - Mar 2025,21,10.88,25430,8
+Mount Alexander (S),Apr - Jun 2025,35.95,20.83,25430,8
+Moyne (S),Apr - Jun 2024,N.P.,N.P.,25490,9
+Moyne (S),Jul - Sep 2024,23.28,13.15,25490,9
+Moyne (S),Oct - Dec 2024,23.51,12.03,25490,9
+Moyne (S),Jan - Mar 2025,N.P.,N.P.,25490,9
+Moyne (S),Apr - Jun 2025,N.P.,N.P.,25490,9
+Murrindindi (S),Apr - Jun 2024,N.P.,N.P.,25620,7
+Murrindindi (S),Jul - Sep 2024,32.89,19.58,25620,7
+Murrindindi (S),Oct - Dec 2024,N.P.,N.P.,25620,7
+Murrindindi (S),Jan - Mar 2025,37.12,18.42,25620,7
+Murrindindi (S),Apr - Jun 2025,40.01,17.83,25620,7
+Nillumbik (S),Apr - Jun 2024,21.79,12.33,25710,10
+Nillumbik (S),Jul - Sep 2024,25.04,12.87,25710,10
+Nillumbik (S),Oct - Dec 2024,25.96,13.8,25710,10
+Nillumbik (S),Jan - Mar 2025,14.38,8.65,25710,10
+Nillumbik (S),Apr - Jun 2025,18.81,14.6,25710,10
+Northern Grampians (S),Apr - Jun 2024,N.P.,N.P.,25810,4
+Northern Grampians (S),Jul - Sep 2024,N.P.,N.P.,25810,4
+Northern Grampians (S),Oct - Dec 2024,N.P.,N.P.,25810,4
+Northern Grampians (S),Jan - Mar 2025,N.P.,N.P.,25810,4
+Northern Grampians (S),Apr - Jun 2025,26.2,7.03,25810,4
+Port Phillip (C),Apr - Jun 2024,15.78,8.65,25900,10
+Port Phillip (C),Jul - Sep 2024,13.35,8.07,25900,10
+Port Phillip (C),Oct - Dec 2024,18,8.22,25900,10
+Port Phillip (C),Jan - Mar 2025,12.49,8.08,25900,10
+Port Phillip (C),Apr - Jun 2025,14.23,8.32,25900,10
+Pyrenees (S),Apr - Jun 2024,N.P.,N.P.,25990,4
+Pyrenees (S),Jul - Sep 2024,N.P.,N.P.,25990,4
+Pyrenees (S),Oct - Dec 2024,N.P.,N.P.,25990,4
+Pyrenees (S),Jan - Mar 2025,N.P.,N.P.,25990,4
+Pyrenees (S),Apr - Jun 2025,N.P.,N.P.,25990,4
+Queenscliffe (B),Apr - Jun 2024,N.P.,N.P.,26080,10
+Queenscliffe (B),Jul - Sep 2024,N.P.,N.P.,26080,10
+Queenscliffe (B),Oct - Dec 2024,N.P.,N.P.,26080,10
+Queenscliffe (B),Jan - Mar 2025,*,*,26080,10
+Queenscliffe (B),Apr - Jun 2025,N.P.,N.P.,26080,10
+South Gippsland (S),Apr - Jun 2024,19.97,11.47,26170,7
+South Gippsland (S),Jul - Sep 2024,27.52,8.58,26170,7
+South Gippsland (S),Oct - Dec 2024,N.P.,N.P.,26170,7
+South Gippsland (S),Jan - Mar 2025,31.38,16.65,26170,7
+South Gippsland (S),Apr - Jun 2025,25.66,10.37,26170,7
+Southern Grampians (S),Apr - Jun 2024,24.58,6.63,26260,7
+Southern Grampians (S),Jul - Sep 2024,N.P.,N.P.,26260,7
+Southern Grampians (S),Oct - Dec 2024,N.P.,N.P.,26260,7
+Southern Grampians (S),Jan - Mar 2025,N.P.,N.P.,26260,7
+Southern Grampians (S),Apr - Jun 2025,15.79,8.36,26260,7
+Stonnington (C),Apr - Jun 2024,26.02,8.33,26350,10
+Stonnington (C),Jul - Sep 2024,16.03,8.06,26350,10
+Stonnington (C),Oct - Dec 2024,17.81,8.27,26350,10
+Stonnington (C),Jan - Mar 2025,15.86,8.41,26350,10
+Stonnington (C),Apr - Jun 2025,13.87,8.52,26350,10
+Strathbogie (S),Apr - Jun 2024,N.P.,N.P.,26430,6
+Strathbogie (S),Jul - Sep 2024,21.54,17.9,26430,6
+Strathbogie (S),Oct - Dec 2024,N.P.,N.P.,26430,6
+Strathbogie (S),Jan - Mar 2025,26.44,20.17,26430,6
+Strathbogie (S),Apr - Jun 2025,N.P.,N.P.,26430,6
+Surf Coast (S),Apr - Jun 2024,20.58,12.04,26490,10
+Surf Coast (S),Jul - Sep 2024,26.18,10.28,26490,10
+Surf Coast (S),Oct - Dec 2024,22.06,12.88,26490,10
+Surf Coast (S),Jan - Mar 2025,21.41,8.84,26490,10
+Surf Coast (S),Apr - Jun 2025,27.28,12.31,26490,10
+Swan Hill (RC),Apr - Jun 2024,28.22,6.52,26610,3
+Swan Hill (RC),Jul - Sep 2024,14.68,8.28,26610,3
+Swan Hill (RC),Oct - Dec 2024,20.3,10.33,26610,3
+Swan Hill (RC),Jan - Mar 2025,19.56,7.01,26610,3
+Swan Hill (RC),Apr - Jun 2025,13.11,10.04,26610,3
+Towong (S),Apr - Jun 2024,N.P.,N.P.,26670,7
+Towong (S),Jul - Sep 2024,N.P.,N.P.,26670,7
+Towong (S),Oct - Dec 2024,N.P.,N.P.,26670,7
+Towong (S),Jan - Mar 2025,N.P.,N.P.,26670,7
+Towong (S),Apr - Jun 2025,N.P.,N.P.,26670,7
+Unincorporated Vic,Apr - Jun 2024,N.P.,N.P.,29399,8
+Unincorporated Vic,Jul - Sep 2024,N.P.,N.P.,29399,8
+Unincorporated Vic,Oct - Dec 2024,N.P.,N.P.,29399,8
+Unincorporated Vic,Jan - Mar 2025,N.P.,N.P.,29399,8
+Unincorporated Vic,Apr - Jun 2025,*,*,29399,8
+Wangaratta (RC),Apr - Jun 2024,19.11,8.18,26700,6
+Wangaratta (RC),Jul - Sep 2024,13.51,6.65,26700,6
+Wangaratta (RC),Oct - Dec 2024,16.87,8.25,26700,6
+Wangaratta (RC),Jan - Mar 2025,37.58,9.38,26700,6
+Wangaratta (RC),Apr - Jun 2025,27.85,9.28,26700,6
+Warrnambool (C),Apr - Jun 2024,13.18,8.08,26730,7
+Warrnambool (C),Jul - Sep 2024,13.44,7.53,26730,7
+Warrnambool (C),Oct - Dec 2024,12.83,8,26730,7
+Warrnambool (C),Jan - Mar 2025,11.91,7.98,26730,7
+Warrnambool (C),Apr - Jun 2025,39.55,8.96,26730,7
+Wellington (S),Apr - Jun 2024,23.9,10.27,26810,5
+Wellington (S),Jul - Sep 2024,23.88,7.93,26810,5
+Wellington (S),Oct - Dec 2024,25.68,12.2,26810,5
+Wellington (S),Jan - Mar 2025,31.45,9.2,26810,5
+Wellington (S),Apr - Jun 2025,27.08,16.27,26810,5
+West Wimmera (S),Apr - Jun 2024,N.P.,N.P.,26890,6
+West Wimmera (S),Jul - Sep 2024,N.P.,N.P.,26890,6
+West Wimmera (S),Oct - Dec 2024,N.P.,N.P.,26890,6
+West Wimmera (S),Jan - Mar 2025,N.P.,N.P.,26890,6
+West Wimmera (S),Apr - Jun 2025,N.P.,N.P.,26890,6
+Whitehorse (C),Apr - Jun 2024,16.33,9.12,26980,9
+Whitehorse (C),Jul - Sep 2024,12.87,8.52,26980,9
+Whitehorse (C),Oct - Dec 2024,14.77,8.4,26980,9
+Whitehorse (C),Jan - Mar 2025,16.59,8.2,26980,9
+Whitehorse (C),Apr - Jun 2025,14.26,8.43,26980,9
+Whittlesea (C),Apr - Jun 2024,17.24,9.3,27070,6
+Whittlesea (C),Jul - Sep 2024,20.15,9.77,27070,6
+Whittlesea (C),Oct - Dec 2024,19,9.7,27070,6
+Whittlesea (C),Jan - Mar 2025,15.51,8.99,27070,6
+Whittlesea (C),Apr - Jun 2025,17.33,8.79,27070,6
+Wodonga (RC),Apr - Jun 2024,11.05,8.45,27170,5
+Wodonga (RC),Jul - Sep 2024,17.34,8.93,27170,5
+Wodonga (RC),Oct - Dec 2024,14.41,9.03,27170,5
+Wodonga (RC),Jan - Mar 2025,23.28,8.43,27170,5
+Wodonga (RC),Apr - Jun 2025,16.13,9.42,27170,5
+Wyndham (C),Apr - Jun 2024,17.51,9.1,27260,8
+Wyndham (C),Jul - Sep 2024,16,9.2,27260,8
+Wyndham (C),Oct - Dec 2024,16.13,9.31,27260,8
+Wyndham (C),Jan - Mar 2025,19.47,9.7,27260,8
+Wyndham (C),Apr - Jun 2025,17.55,9.52,27260,8
+Yarra (C),Apr - Jun 2024,14.08,8.38,27350,9
+Yarra (C),Jul - Sep 2024,14.23,7.42,27350,9
+Yarra (C),Oct - Dec 2024,12.38,7.61,27350,9
+Yarra (C),Jan - Mar 2025,12.47,7.04,27350,9
+Yarra (C),Apr - Jun 2025,14.08,8.18,27350,9
+Yarra Ranges (S),Apr - Jun 2024,23.56,11.78,27450,9
+Yarra Ranges (S),Jul - Sep 2024,20.53,9.58,27450,9
+Yarra Ranges (S),Oct - Dec 2024,24.47,11.05,27450,9
+Yarra Ranges (S),Jan - Mar 2025,21.99,11.08,27450,9
+Yarra Ranges (S),Apr - Jun 2025,17.45,9.98,27450,9
+Yarriambiack (S),Apr - Jun 2024,N.P.,N.P.,27630,3
+Yarriambiack (S),Jul - Sep 2024,N.P.,N.P.,27630,3
+Yarriambiack (S),Oct - Dec 2024,N.P.,N.P.,27630,3
+Yarriambiack (S),Jan - Mar 2025,N.P.,N.P.,27630,3
+Yarriambiack (S),Apr - Jun 2025,N.P.,N.P.,27630,3
