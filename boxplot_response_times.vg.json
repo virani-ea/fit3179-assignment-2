@@ -3,8 +3,8 @@
   "description": "Box plot of median ambulance response times by SEIFA decile at the LGA level.",
   "background": "white",
   "padding": 5,
-  "width": 400,
-  "height": 300,
+  "width": 550,
+  "height": 450,
   "style": "cell",
   "data": [
     {

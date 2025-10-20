@@ -27,14 +27,16 @@
       <h2>1. Population Density and <span style="color: #e74c3c;">Hospital Locations</span></h2>
       <div class="flex-row">
         <div id="vis1"></div>
-        <div> It is evident that the majority of hospitals are 
+        <p> 
+          It is evident that the majority of hospitals are 
           positioned in or near high-density regions, supporting
           health service accessibility in populous urban zones.
           However, the map also reveals large, low-density areas
           with few or no hospitals, raising questions about healthcare
           access for rural communities. These spatial insights prompt
           further investigation into service availability and equity
-          outside major cities. </div>
+          outside major cities. 
+        </p>
       </div>
     </div>
 
@@ -42,49 +44,58 @@
     <div class="vis-container">
       <h2>2. How does Victoria compare to other states?</h2>
       <div class="flex-row">
-        <div id="vis2"></div>
-        <div>This chart compares Australian states and territories by the number of public hospitals per 100,000 residents—a basic indicator of potential healthcare access. <br><br>
+        <p>This chart compares Australian states and territories by the number of public hospitals per 100,000 residents—a basic indicator of potential healthcare access. <br><br>
           While densely populated regions like NSW and Victoria have the 
           highest absolute numbers of hospitals, smaller states (such as Tasmania and South Australia) have more hospitals per capita, improving local access. <br><br>
           ACT stands out for its uniquely low ratio, largely due to its city-state structure. This perspective highlights regional inequalities in infrastructure, which can have implications for healthcare delivery and resilience.
-      </div>
+        </p>
+        <div id="vis2"></div>
       </div>
     </div>
 
     <!-- Visualisation 3: SEIFA Disadvantage -->
     <div class="vis-container">
       <h2>3. Socioeconomic Disadvantage in Victoria</h2>
-      <div>
-        <div class="flex-row">
-          <!-- Map Rendering -->
-          <div id="vis3"></div>
-          <!-- LGA search dropdown directly beside the map -->
-          <div class="flex-column">
-            <p class="filter-narration">Discover your local area’s socioeconomic standing.</p>
-            <select id="lga-search">
-              <option value="">Select your LGA</option>
-            </select>
+        <div>
+          <div class="flex-row">
+            <!-- Map Rendering -->
+            <div id="vis3"></div>
+            <!-- LGA search dropdown directly beside the map -->
+            <div class="flex-column">
+              <p>
+                The distribution of disadvantage varies across Victoria, seen in both metro and rural LGAs.
+                Cross-referencing with hospital locations can reveal mismatches between need and access.<br>
+                <strong>Are the most disadvantaged areas those with least hospital proximity?<br></strong><br>
+                Click on decile values to explore regions by socioeconomic score.<br>
+                Score 1 means most disadvantaged, while score 10 means least disadvantaged.<br>
+              </p>
+              <div class ="interactive-box flex-column">
+                <p class="filter-narration">Discover your local area’s socioeconomic standing.</p>
+                <select id="lga-search">
+                  <option value="">Select your LGA</option>
+                </select>
 
-            <!-- Text output about decile/result -->
-            <div id="lga-seifa-output"></div>
+                <!-- Text output about decile/result -->
+                <div id="lga-seifa-output"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-        <p>
-          The distribution of disadvantage varies across Victoria, seen in both metro and rural LGAs.
-          Cross-referencing with hospital locations can reveal mismatches between need and access.<br>
-          <strong>Are the most disadvantaged areas those with least hospital proximity?<br></strong><br>
-          Click on decile values to explore regions by socioeconomic score.<br>
-          Score 1 means most disadvantaged, while score 10 means least disadvantaged.<br>
-        </p>
-      </div>
-    </div>
-
-
+    
     <!-- Visualisation 4: Ambulance Response Time by LGA (Lollipop) -->
     <div class="vis-container">
-      <h2>4. Ambulance Response Time by LGA</h2>
-      <div id="vis4"></div>
+      <h2>4. Ambulance Response Time by Decile</h2>
+      <div class="flex-row">
+        <div id="vis4"></div>
+        <p>This chart explores how socioeconomic disadvantage correlates with ambulance response times across Victoria. <br><br>
+
+          A clear pattern emerges — <strong>response times tend to be longer in more disadvantaged regions</strong>, with greater variability as well. This suggests that residents in lower-decile LGAs may face slower emergency response due to factors such as lower service density, resource constraints, or distance from urban centers.<br><br>
+
+          By contrast, <strong>wealthier and more urban LGAs (higher deciles)</strong> generally report faster and more consistent response times, highlighting disparities in emergency care accessibility.
+          These findings reinforce the broader theme of <strong>unequal healthcare access</strong> and underscore the importance of equitable resource distribution across Victoria’s regions.
+        </p>
+      </div>
     </div>
 
     <!-- Visualisation 5: Admissions Over Time -->
@@ -98,6 +109,7 @@
         Data sources: AIHW MyHospitals API, ABS Census, Victorian Health Services (VAHI). <br>
         Visualisation built with Vega-Lite.</p>
     </footer>
+  </div>
   </div>
 </body>
 </html>

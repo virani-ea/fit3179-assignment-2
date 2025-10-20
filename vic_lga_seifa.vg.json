@@ -33,7 +33,7 @@
       "name": "projection",
       "size": {"signal": "[width, height]"},
       "fit": {"signal": "data('source_0')"},
-      "type": "mercator"    
+      "type": "mercator"
     }
   ],
   "signals": [
@@ -148,7 +148,12 @@
   ],
   "legends": [
     {
+      "labelFont": "Segoe UI",
+      "labelFontSize": 14,
+      "symbolSize": 150,
       "title": "SEIFA IRSD Decile",
+      "titleFont": "Segoe UI",
+      "titleFontSize": 14,
       "fill": "color",
       "symbolType": "circle",
       "encode": {
