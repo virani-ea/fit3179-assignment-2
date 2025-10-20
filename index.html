@@ -7,11 +7,13 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
 </head>
 <body>
   <div class="container">
@@ -52,8 +54,22 @@
     <!-- Visualisation 3: SEIFA Disadvantage -->
     <div class="vis-container">
       <h2>3. Socioeconomic Disadvantage in Victoria</h2>
-      <div class="flex-row">
-        <div id="vis3"></div>
+      <div>
+        <div class="flex-row">
+          <!-- Map Rendering -->
+          <div id="vis3"></div>
+          <!-- LGA search dropdown directly beside the map -->
+          <div class="flex-column">
+            <p class="filter-narration">Discover your local area’s socioeconomic standing.</p>
+            <select id="lga-search">
+              <option value="">Select your LGA</option>
+            </select>
+
+            <!-- Text output about decile/result -->
+            <div id="lga-seifa-output"></div>
+          </div>
+        </div>
+      </div>
         <p>
           The distribution of disadvantage varies across Victoria, seen in both metro and rural LGAs.
           Cross-referencing with hospital locations can reveal mismatches between need and access.<br>
@@ -65,11 +81,11 @@
     </div>
 
 
-    <!-- Visualisation 4: SEIFA vs Hospital Density -->
-    <!-- <div class="vis-container">
-      <h2>4. SEIFA Score vs Hospital Density</h2>
+    <!-- Visualisation 4: Ambulance Response Time by LGA (Lollipop) -->
+    <div class="vis-container">
+      <h2>4. Ambulance Response Time by LGA</h2>
       <div id="vis4"></div>
-    </div> -->
+    </div>
 
     <!-- Visualisation 5: Admissions Over Time -->
     <!-- <div class="vis-container">
@@ -79,7 +95,7 @@
 
     <footer>
       <p>Author: Virani Aboetan. <br>
-        Data sources: AIHW MyHospitals API, ABS Census, SEIFA. <br>
+        Data sources: AIHW MyHospitals API, ABS Census, Victorian Health Services (VAHI). <br>
         Visualisation built with Vega-Lite.</p>
     </footer>
   </div>

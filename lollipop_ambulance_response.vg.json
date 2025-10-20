@@ -1,0 +1,189 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Lollipop chart of Ambulance Response Times by LGA (Median and 90th Percentile).",
+  "autosize": {"type": "pad", "contains": "padding"},
+  "background": "white",
+  "padding": {"left": 20},
+  "width": 400,
+  "height": 800,
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/ambulance_response_priority_0.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "DecileSel !== '' ? datum.Decile == DecileSel : datum.LGA === 'Darebin' || datum.LGA === 'Central Goldfields' || datum.LGA === 'Knox'"
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Median\"]) && isFinite(+datum[\"Median\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_2",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Median\"]) && isFinite(+datum[\"Median\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_3",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"90th_Percentile\"]) && isFinite(+datum[\"90th_Percentile\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [{"name": "DecileSel", "value": ""}],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "rule",
+      "style": ["rule"],
+      "from": {"data": "data_1"},
+      "encode": {
+        "update": {
+          "strokeWidth": {"value": 2},
+          "stroke": {"value": "#b3b3b3"},
+          "description": {
+            "signal": "\"Response Time (minutes): \" + (format(datum[\"Median\"], \"\")) + \"; Local Government Area: \" + (isValid(datum[\"LGA\"]) ? datum[\"LGA\"] : \"\"+datum[\"LGA\"]) + \"; 90th_Percentile: \" + (format(datum[\"90th_Percentile\"], \"\"))"
+          },
+          "x": {"scale": "x", "field": "Median"},
+          "x2": {"scale": "x", "field": "90th_Percentile"},
+          "y": {"scale": "y", "field": "LGA", "band": 0.5}
+        }
+      }
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "data_2"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "size": {"value": 100},
+          "fill": {"value": "#005fbf"},
+          "tooltip": {
+            "signal": "{\"LGA\": isValid(datum[\"LGA\"]) ? datum[\"LGA\"] : \"\"+datum[\"LGA\"], \"Median\": format(datum[\"Median\"], \"\"), \"90th_Percentile\": format(datum[\"90th_Percentile\"], \"\"), \"Decile\": isValid(datum[\"Decile\"]) ? datum[\"Decile\"] : \"\"+datum[\"Decile\"]}"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Median: \" + (format(datum[\"Median\"], \"\")) + \"; Local Government Area: \" + (isValid(datum[\"LGA\"]) ? datum[\"LGA\"] : \"\"+datum[\"LGA\"]) + \"; LGA: \" + (isValid(datum[\"LGA\"]) ? datum[\"LGA\"] : \"\"+datum[\"LGA\"]) + \"; 90th_Percentile: \" + (format(datum[\"90th_Percentile\"], \"\")) + \"; Decile: \" + (isValid(datum[\"Decile\"]) ? datum[\"Decile\"] : \"\"+datum[\"Decile\"])"
+          },
+          "x": {"scale": "x", "field": "Median"},
+          "y": {"scale": "y", "field": "LGA", "band": 0.5},
+          "shape": {"value": "circle"}
+        }
+      }
+    },
+    {
+      "name": "layer_2_marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "data_3"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "size": {"value": 100},
+          "fill": {"value": "#e67800"},
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"90th_Percentile: \" + (format(datum[\"90th_Percentile\"], \"\")) + \"; Local Government Area: \" + (isValid(datum[\"LGA\"]) ? datum[\"LGA\"] : \"\"+datum[\"LGA\"])"
+          },
+          "x": {"scale": "x", "field": "90th_Percentile"},
+          "y": {"scale": "y", "field": "LGA", "band": 0.5},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_1", "field": "Median"},
+          {"data": "data_1", "field": "90th_Percentile"},
+          {"data": "data_2", "field": "Median"},
+          {"data": "data_3", "field": "90th_Percentile"}
+        ]
+      },
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "y",
+      "type": "band",
+      "domain": {"data": "source_0", "field": "LGA", "sort": true},
+      "range": [0, {"signal": "height"}],
+      "paddingInner": 0,
+      "paddingOuter": 0
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "gridScale": "y",
+      "grid": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Response Time (minutes)",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Local Government Area",
+      "zindex": 0
+    }
+  ],
+  "config": {"axis": {"grid": true, "tickBand": "extent"}}
+}

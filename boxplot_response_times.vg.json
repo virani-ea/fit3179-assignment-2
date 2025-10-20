@@ -1,0 +1,357 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Box plot of median ambulance response times by SEIFA decile at the LGA level.",
+  "background": "white",
+  "padding": 5,
+  "width": 400,
+  "height": 300,
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/lga_medians.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "joinaggregate",
+          "as": ["lower_box_90th Percentile", "upper_box_90th Percentile"],
+          "ops": ["q1", "q3"],
+          "fields": ["90th Percentile", "90th Percentile"],
+          "groupby": ["SEIFA Decile", "SEIFA Decile"]
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "source": "data_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum['90th Percentile'] < datum['lower_box_90th Percentile'] - 1.5 * (datum['upper_box_90th Percentile'] - datum['lower_box_90th Percentile'])) || (datum['90th Percentile'] > datum['upper_box_90th Percentile'] + 1.5 * (datum['upper_box_90th Percentile'] - datum['lower_box_90th Percentile']))"
+        },
+        {
+          "type": "formula",
+          "expr": "datum[\"SEIFA Decile\"]===\"2\" ? 0 : datum[\"SEIFA Decile\"]===\"3\" ? 1 : datum[\"SEIFA Decile\"]===\"4\" ? 2 : datum[\"SEIFA Decile\"]===\"5\" ? 3 : datum[\"SEIFA Decile\"]===\"6\" ? 4 : datum[\"SEIFA Decile\"]===\"7\" ? 5 : datum[\"SEIFA Decile\"]===\"8\" ? 6 : datum[\"SEIFA Decile\"]===\"9\" ? 7 : datum[\"SEIFA Decile\"]===\"10\" ? 8 : 9",
+          "as": "x_SEIFA Decile_sort_index"
+        }
+      ]
+    },
+    {
+      "name": "data_2",
+      "source": "data_1",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"90th Percentile\"]) && isFinite(+datum[\"90th Percentile\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_3",
+      "source": "data_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "(datum['lower_box_90th Percentile'] - 1.5 * (datum['upper_box_90th Percentile'] - datum['lower_box_90th Percentile']) <= datum['90th Percentile']) && (datum['90th Percentile'] <= datum['upper_box_90th Percentile'] + 1.5 * (datum['upper_box_90th Percentile'] - datum['lower_box_90th Percentile']))"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["SEIFA Decile"],
+          "ops": ["min", "max", "min", "max"],
+          "fields": [
+            "90th Percentile",
+            "90th Percentile",
+            "lower_box_90th Percentile",
+            "upper_box_90th Percentile"
+          ],
+          "as": [
+            "lower_whisker_90th Percentile",
+            "upper_whisker_90th Percentile",
+            "lower_box_90th Percentile",
+            "upper_box_90th Percentile"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum[\"SEIFA Decile\"]===\"2\" ? 0 : datum[\"SEIFA Decile\"]===\"3\" ? 1 : datum[\"SEIFA Decile\"]===\"4\" ? 2 : datum[\"SEIFA Decile\"]===\"5\" ? 3 : datum[\"SEIFA Decile\"]===\"6\" ? 4 : datum[\"SEIFA Decile\"]===\"7\" ? 5 : datum[\"SEIFA Decile\"]===\"8\" ? 6 : datum[\"SEIFA Decile\"]===\"9\" ? 7 : datum[\"SEIFA Decile\"]===\"10\" ? 8 : 9",
+          "as": "x_SEIFA Decile_sort_index"
+        },
+        {
+          "type": "formula",
+          "expr": "datum[\"SEIFA Decile\"]===\"2\" ? 0 : datum[\"SEIFA Decile\"]===\"3\" ? 1 : datum[\"SEIFA Decile\"]===\"4\" ? 2 : datum[\"SEIFA Decile\"]===\"5\" ? 3 : datum[\"SEIFA Decile\"]===\"6\" ? 4 : datum[\"SEIFA Decile\"]===\"7\" ? 5 : datum[\"SEIFA Decile\"]===\"8\" ? 6 : datum[\"SEIFA Decile\"]===\"9\" ? 7 : datum[\"SEIFA Decile\"]===\"10\" ? 8 : 9",
+          "as": "tooltip_SEIFA Decile_sort_index"
+        }
+      ]
+    },
+    {
+      "name": "data_5",
+      "source": "data_3",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"lower_whisker_90th Percentile\"]) && isFinite(+datum[\"lower_whisker_90th Percentile\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_6",
+      "source": "data_3",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"upper_box_90th Percentile\"]) && isFinite(+datum[\"upper_box_90th Percentile\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_7",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["SEIFA Decile"],
+          "ops": ["q1", "q3", "median", "min", "max"],
+          "fields": [
+            "90th Percentile",
+            "90th Percentile",
+            "90th Percentile",
+            "90th Percentile",
+            "90th Percentile"
+          ],
+          "as": [
+            "lower_box_90th Percentile",
+            "upper_box_90th Percentile",
+            "mid_box_90th Percentile",
+            "min_90th Percentile",
+            "max_90th Percentile"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum[\"SEIFA Decile\"]===\"2\" ? 0 : datum[\"SEIFA Decile\"]===\"3\" ? 1 : datum[\"SEIFA Decile\"]===\"4\" ? 2 : datum[\"SEIFA Decile\"]===\"5\" ? 3 : datum[\"SEIFA Decile\"]===\"6\" ? 4 : datum[\"SEIFA Decile\"]===\"7\" ? 5 : datum[\"SEIFA Decile\"]===\"8\" ? 6 : datum[\"SEIFA Decile\"]===\"9\" ? 7 : datum[\"SEIFA Decile\"]===\"10\" ? 8 : 9",
+          "as": "x_SEIFA Decile_sort_index"
+        },
+        {
+          "type": "formula",
+          "expr": "datum[\"SEIFA Decile\"]===\"2\" ? 0 : datum[\"SEIFA Decile\"]===\"3\" ? 1 : datum[\"SEIFA Decile\"]===\"4\" ? 2 : datum[\"SEIFA Decile\"]===\"5\" ? 3 : datum[\"SEIFA Decile\"]===\"6\" ? 4 : datum[\"SEIFA Decile\"]===\"7\" ? 5 : datum[\"SEIFA Decile\"]===\"8\" ? 6 : datum[\"SEIFA Decile\"]===\"9\" ? 7 : datum[\"SEIFA Decile\"]===\"10\" ? 8 : 9",
+          "as": "tooltip_SEIFA Decile_sort_index"
+        }
+      ]
+    },
+    {
+      "name": "data_9",
+      "source": "data_7",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"lower_box_90th Percentile\"]) && isFinite(+datum[\"lower_box_90th Percentile\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_10",
+      "source": "data_7",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"mid_box_90th Percentile\"]) && isFinite(+datum[\"mid_box_90th Percentile\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_layer_0_marks",
+      "type": "symbol",
+      "style": ["point", "boxplot-outliers"],
+      "from": {"data": "data_2"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "fill": {"value": "transparent"},
+          "stroke": {"scale": "color", "field": "SEIFA Decile"},
+          "ariaRoleDescription": {"value": "point"},
+          "description": {
+            "signal": "\"SEIFA Decile: \" + (isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]) + \"; Response Time (min): \" + (format(datum[\"90th Percentile\"], \"\"))"
+          },
+          "x": {"scale": "x", "field": "SEIFA Decile", "band": 0.5},
+          "y": {"scale": "y", "field": "90th Percentile"}
+        }
+      }
+    },
+    {
+      "name": "layer_0_layer_1_layer_0_marks",
+      "type": "rule",
+      "style": ["rule", "boxplot-rule"],
+      "aria": false,
+      "from": {"data": "data_5"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "black"},
+          "tooltip": {
+            "signal": "{\"Upper Whisker of Response Time (min)\": format(datum[\"upper_whisker_90th Percentile\"], \"\"), \"Lower Whisker of Response Time (min)\": format(datum[\"lower_whisker_90th Percentile\"], \"\"), \"SEIFA Decile\": isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]}"
+          },
+          "x": {"scale": "x", "field": "SEIFA Decile", "band": 0.5},
+          "y": {"scale": "y", "field": "lower_whisker_90th Percentile"},
+          "y2": {"scale": "y", "field": "lower_box_90th Percentile"}
+        }
+      }
+    },
+    {
+      "name": "layer_0_layer_1_layer_1_marks",
+      "type": "rule",
+      "style": ["rule", "boxplot-rule"],
+      "aria": false,
+      "from": {"data": "data_6"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "black"},
+          "tooltip": {
+            "signal": "{\"Upper Whisker of Response Time (min)\": format(datum[\"upper_whisker_90th Percentile\"], \"\"), \"Lower Whisker of Response Time (min)\": format(datum[\"lower_whisker_90th Percentile\"], \"\"), \"SEIFA Decile\": isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]}"
+          },
+          "x": {"scale": "x", "field": "SEIFA Decile", "band": 0.5},
+          "y": {"scale": "y", "field": "upper_box_90th Percentile"},
+          "y2": {"scale": "y", "field": "upper_whisker_90th Percentile"}
+        }
+      }
+    },
+    {
+      "name": "layer_1_layer_0_marks",
+      "type": "rect",
+      "style": ["bar", "boxplot-box"],
+      "from": {"data": "data_9"},
+      "encode": {
+        "update": {
+          "ariaRoleDescription": {"value": "box"},
+          "fill": {"scale": "color", "field": "SEIFA Decile"},
+          "tooltip": {
+            "signal": "{\"Max of Response Time (min)\": format(datum[\"max_90th Percentile\"], \"\"), \"Q3 of Response Time (min)\": format(datum[\"upper_box_90th Percentile\"], \"\"), \"Median of Response Time (min)\": format(datum[\"mid_box_90th Percentile\"], \"\"), \"Q1 of Response Time (min)\": format(datum[\"lower_box_90th Percentile\"], \"\"), \"Min of Response Time (min)\": format(datum[\"min_90th Percentile\"], \"\"), \"SEIFA Decile\": isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]}"
+          },
+          "description": {
+            "signal": "\"SEIFA Decile: \" + (isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]) + \"; Response Time (min): \" + (format(datum[\"lower_box_90th Percentile\"], \"\")) + \"; upper_box_90th Percentile: \" + (format(datum[\"upper_box_90th Percentile\"], \"\")) + \"; Max of Response Time (min): \" + (format(datum[\"max_90th Percentile\"], \"\")) + \"; Q3 of Response Time (min): \" + (format(datum[\"upper_box_90th Percentile\"], \"\")) + \"; Median of Response Time (min): \" + (format(datum[\"mid_box_90th Percentile\"], \"\")) + \"; Q1 of Response Time (min): \" + (format(datum[\"lower_box_90th Percentile\"], \"\")) + \"; Min of Response Time (min): \" + (format(datum[\"min_90th Percentile\"], \"\"))"
+          },
+          "xc": {"scale": "x", "field": "SEIFA Decile", "band": 0.5},
+          "width": {"value": 14},
+          "y": {"scale": "y", "field": "lower_box_90th Percentile"},
+          "y2": {"scale": "y", "field": "upper_box_90th Percentile"}
+        }
+      }
+    },
+    {
+      "name": "layer_1_layer_1_marks",
+      "type": "rect",
+      "style": ["tick", "boxplot-median"],
+      "aria": false,
+      "from": {"data": "data_10"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "fill": [
+            {
+              "test": "datum['lower_box_90th Percentile'] >= datum['upper_box_90th Percentile']",
+              "scale": "color",
+              "field": "SEIFA Decile"
+            },
+            {"value": "white"}
+          ],
+          "tooltip": {
+            "signal": "{\"Max of Response Time (min)\": format(datum[\"max_90th Percentile\"], \"\"), \"Q3 of Response Time (min)\": format(datum[\"upper_box_90th Percentile\"], \"\"), \"Median of Response Time (min)\": format(datum[\"mid_box_90th Percentile\"], \"\"), \"Q1 of Response Time (min)\": format(datum[\"lower_box_90th Percentile\"], \"\"), \"Min of Response Time (min)\": format(datum[\"min_90th Percentile\"], \"\"), \"SEIFA Decile\": isValid(datum[\"SEIFA Decile\"]) ? datum[\"SEIFA Decile\"] : \"\"+datum[\"SEIFA Decile\"]}"
+          },
+          "xc": {"scale": "x", "field": "SEIFA Decile", "band": 0.5},
+          "width": {"value": 14},
+          "yc": {"scale": "y", "field": "mid_box_90th Percentile"},
+          "height": {"value": 1}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": {
+        "fields": [
+          {"data": "data_1", "field": "SEIFA Decile"},
+          {"data": "data_3", "field": "SEIFA Decile"},
+          {"data": "data_7", "field": "SEIFA Decile"}
+        ],
+        "sort": {"op": "min", "field": "x_SEIFA Decile_sort_index"}
+      },
+      "range": [0, {"signal": "width"}],
+      "paddingInner": 0,
+      "paddingOuter": 0
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_2", "field": "90th Percentile"},
+          {"data": "data_5", "field": "lower_whisker_90th Percentile"},
+          {"data": "data_5", "field": "lower_box_90th Percentile"},
+          {"data": "data_6", "field": "upper_box_90th Percentile"},
+          {"data": "data_6", "field": "upper_whisker_90th Percentile"},
+          {"data": "data_9", "field": "lower_box_90th Percentile"},
+          {"data": "data_9", "field": "upper_box_90th Percentile"},
+          {"data": "data_10", "field": "mid_box_90th Percentile"}
+        ]
+      },
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "fields": [
+          {"data": "data_2", "field": "SEIFA Decile"},
+          {"data": "data_9", "field": "SEIFA Decile"},
+          {"data": "data_10", "field": "SEIFA Decile"}
+        ],
+        "sort": true
+      },
+      "range": {"scheme": "set2"}
+    }
+  ],
+  "axes": [
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "SEIFA Decile",
+      "labelAlign": "right",
+      "labelAngle": 270,
+      "labelBaseline": "middle",
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Response Time (min)",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ],
+  "config": {}
+}
