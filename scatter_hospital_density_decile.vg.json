@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 600,
+  "height": 400,
+  "padding": 5,
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/lga_seifa_hospital_count.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    }
+  ],
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "linear",
+      "domain": {"data": "table", "field": "Hospital_density"},
+      "range": "width",
+      "nice": true,
+      "zero": false
+    },
+    {
+      "name": "yscale",
+      "type": "linear",
+      "domain": {"data": "table", "field": "Decile"},
+      "range": "height",
+      "nice": true,
+      "zero": false
+    }
+  ],
+  "axes": [
+    {
+      "orient": "bottom",
+      "scale": "xscale",
+      "title": "Hospital Density",
+      "titleFontSize": 15,
+      "labelFontSize": 12
+    },
+    {
+      "orient": "left",
+      "scale": "yscale",
+      "title": "SEIFA Decile",
+      "titleFontSize": 15,
+      "labelFontSize": 12
+    }
+  ],
+  "marks": [
+    {
+      "type": "symbol",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "Hospital_density"},
+          "y": {"scale": "yscale", "field": "Decile"},
+          "size": {"value": 100},
+          "fill": {"value": "purple"},
+          "tooltip": {
+            "signal": "datum.LGA_NAME25 + ': Density=' + datum.Hospital_density + ', Decile=' + datum.Decile"
+          }
+        }
+      }
+    }
+  ],
+  "config": {}
+}

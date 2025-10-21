@@ -6,7 +6,7 @@ body {
   padding: 20px;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 header {
@@ -15,6 +15,17 @@ header {
 }
 h1 {
   color: #1f77b4;
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.2em;
+  text-align: center;
+}
+h3 {
+  font-size: 1.7em;
+}
+p {
+  font-size: 1.3em;
 }
 .vis-container {
   margin-bottom: 50px;
@@ -23,10 +34,11 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.vis-container h2 {
+.vis-container h3 {
   color: #2c3e50;
   border-bottom: 2px solid #3498db;
   padding-bottom: 5px;
+  text-align: center;
 }
 footer {
   text-align: center;
@@ -37,7 +49,8 @@ footer {
 
 .flex-row {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: stretch;
   gap: 40px;
 }
 
@@ -45,22 +58,17 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
 #lga-seifa-output,
-#lga-search {
-  font-size: 18px;
+#lga-search,
+.filter-narration{
+  font-size: 22px;
   margin: 5px 0;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.filter-narration {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 10px 0;
 }
 
 .interactive-box {
@@ -68,7 +76,9 @@ footer {
   border-radius: 8px;
   padding: 15px;
 }
-
-p {
+.flex-row > .vis-container {
+  flex: 1;
+}
+#vg-tooltip-element {
   font-size: 18px;
 }

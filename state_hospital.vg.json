@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Hospitals per 100,000 people by state/territory (public only, 2024)",
-  "width": 550,
-  "height": 390,
+  "width": 630,
+  "height": 470,
   "data": {
     "values": [
       {"State":"NSW","HospitalsPer100k":2.6},
@@ -21,8 +21,10 @@
     "sort": {
       "field": "HospitalsPer100k",
       "order": "ascending"
-    }},
-    "y": {"field": "HospitalsPer100k", "type": "quantitative", "axis": {"title": "Hospitals per 100,000 people"}},
+    },
+    "axis": {"titleFontSize": 15,"labelFontSize": 12}
+  },
+    "y": {"field": "HospitalsPer100k", "type": "quantitative", "axis": {"title": "Hospitals per 100,000 people", "titleFontSize": 15, "labelFontSize": 12}},
     "color": {
         "field": "State",
         "type": "nominal",

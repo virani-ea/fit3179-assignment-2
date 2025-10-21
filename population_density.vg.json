@@ -3,8 +3,8 @@
   "description": "Choropleth map of Australian population density by SA3, overlaying hospital locations.",
   "background": "white",
   "padding": 5,
-  "width": 550,
-  "height": 460,
+  "width": 600,
+  "height": 510,
   "style": "view",
   "data": [
     {

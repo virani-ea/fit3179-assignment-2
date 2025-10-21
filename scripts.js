@@ -4,16 +4,13 @@ function embedVis(elementId, specUrl) {
 }
 
 
-// Load all visualisations
 embedVis('vis1', 'population_density.vg.json');
 embedVis('vis2', 'state_hospital.vg.json');
 
 // Embed the SEIFA map (choropleth) and store the view
 embedVis('vis3', 'vic_lga_seifa.vg.json').then(result => {
 
-    // Example URL: use the same CSV your Vega chart uses
     const csvUrl = "https://raw.githubusercontent.com/virani-ea/fit3179-assignment-2/refs/heads/main/data/lga_seifa_indexes_vic.csv";
-    console.log("we got here");
 
     // 1. Fetch and parse the CSV
     Papa.parse(csvUrl, {
@@ -35,7 +32,7 @@ embedVis('vis3', 'vic_lga_seifa.vg.json').then(result => {
                 }
             });
 
-            // Now fill the dropdown as before
+            // Fill the dropdown as before
             const select = document.getElementById('lga-search');
             lgas.forEach(lga => {
                 const option = document.createElement('option');
@@ -60,5 +57,4 @@ embedVis('vis3', 'vic_lga_seifa.vg.json').then(result => {
   });
 ;
 embedVis('vis4', 'boxplot_response_times.vg.json');
-
-// embedVis('vis5', 'admissions_trend.vg.json');
+embedVis('vis5', 'scatter_hospital_density_decile.vg.json');

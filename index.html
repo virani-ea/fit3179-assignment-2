@@ -18,44 +18,58 @@
 <body>
   <div class="container">
     <header>
-      <h1>Mapping Healthcare Access in Victoria</h1>
-      <p>Are hospitals located where people live? How do socioeconomic factors influence healthcare equity?</p>
+      <h1>Victorian Healthcare Access Snapshot</h1>
+      <p>
+        <strong>Are hospitals located where people live? How do socioeconomic factors influence healthcare equity?</strong><br><br>
+        This visualisation explores healthcare access across Victoria, starting with a statewide overview and then zooming in <br>
+        to highlight regional equity and disparities. The interactive maps and charts reveal how hospital locations, <br>
+        population, and socioeconomic factors shape access. Designed for policymakers and the public.
+      </p>
     </header>
+    <h2>Statewide Overview</h2>
+    <div class = "flex-row">
+      <!-- Visualisation 1: Population Density + Hospitals -->
+      <div class="vis-container">
+        <h3>Population Density and <span style="color: #e74c3c;">Hospital Locations</span></h3>
+        <div class="flex-column">
+          <div id="vis1"></div>
+          <p> 
+            It is evident that the majority of hospitals are positioned <br>
+            in or near high-density regions, <strong>supporting health service accessibility<br>
+            in populous urban zones</strong>.<br><br>
+            However, the map also reveals <strong>large, low-density areas with few <br>
+            or no hospitals</strong>, raising questions about healthcare access for <br>
+            rural communities. <br><br>
+            These spatial insights prompt further investigation into service <br>
+            availability and equity outside major cities.
+          </p>
+        </div>
+      </div>
 
-    <!-- Visualisation 1: Population Density + Hospitals -->
-    <div class="vis-container">
-      <h2>1. Population Density and <span style="color: #e74c3c;">Hospital Locations</span></h2>
-      <div class="flex-row">
-        <div id="vis1"></div>
-        <p> 
-          It is evident that the majority of hospitals are 
-          positioned in or near high-density regions, supporting
-          health service accessibility in populous urban zones.
-          However, the map also reveals large, low-density areas
-          with few or no hospitals, raising questions about healthcare
-          access for rural communities. These spatial insights prompt
-          further investigation into service availability and equity
-          outside major cities. 
-        </p>
+      <!-- Visualisation 2: Hospital Counts by State -->
+      <div class="vis-container">
+        <h3>How does Victoria compare to other states?</h3>
+        <div class="flex-column">
+          <div id="vis2"></div>
+          <p>This chart compares Australian states and territories by the number <br> 
+            of public hospitals per 100,000 residents—a basic indicator of <br>
+            potential healthcare access. <br><br>
+
+            While densely populated regions like NSW and Victoria have the <br>
+            highest absolute numbers of hospitals, <strong>smaller states (i.e. Tasmania and <br> 
+            South Australia) have more hospitals per capita</strong>, suggesting strong access. <br><br>
+
+            ACT stands out for its uniquely low ratio, largely due to its <br>
+            city-state structure. This perspective highlights regional inequalities <br>
+            in infrastructure, which can have implications for healthcare delivery and resilience.
+          </p>
+        </div>
       </div>
     </div>
-
-    <!-- Visualisation 2: Hospital Counts by State -->
-    <div class="vis-container">
-      <h2>2. How does Victoria compare to other states?</h2>
-      <div class="flex-row">
-        <p>This chart compares Australian states and territories by the number of public hospitals per 100,000 residents—a basic indicator of potential healthcare access. <br><br>
-          While densely populated regions like NSW and Victoria have the 
-          highest absolute numbers of hospitals, smaller states (such as Tasmania and South Australia) have more hospitals per capita, improving local access. <br><br>
-          ACT stands out for its uniquely low ratio, largely due to its city-state structure. This perspective highlights regional inequalities in infrastructure, which can have implications for healthcare delivery and resilience.
-        </p>
-        <div id="vis2"></div>
-      </div>
-    </div>
-
+    <h2>Exploring Healthcare Equity by Region</h2>
     <!-- Visualisation 3: SEIFA Disadvantage -->
     <div class="vis-container">
-      <h2>3. Socioeconomic Disadvantage in Victoria</h2>
+      <h3>Socioeconomic Disadvantage in Victoria</h3>
         <div>
           <div class="flex-row">
             <!-- Map Rendering -->
@@ -63,11 +77,12 @@
             <!-- LGA search dropdown directly beside the map -->
             <div class="flex-column">
               <p>
-                The distribution of disadvantage varies across Victoria, seen in both metro and rural LGAs.
-                Cross-referencing with hospital locations can reveal mismatches between need and access.<br>
+                The distribution of disadvantage varies across Victoria, seen in both <br>
+                metro and rural LGAs. Cross-referencing with hospital locations can reveal <br>
+                mismatches between need and access.<br>
                 <strong>Are the most disadvantaged areas those with least hospital proximity?<br></strong><br>
                 Click on decile values to explore regions by socioeconomic score.<br>
-                Score 1 means most disadvantaged, while score 10 means least disadvantaged.<br>
+                Score 1 means most disadvantaged, score 10 means least disadvantaged.<br>
               </p>
               <div class ="interactive-box flex-column">
                 <p class="filter-narration">Discover your local area’s socioeconomic standing.</p>
@@ -85,24 +100,72 @@
     
     <!-- Visualisation 4: Ambulance Response Time by LGA (Lollipop) -->
     <div class="vis-container">
-      <h2>4. Ambulance Response Time by Decile</h2>
+      <h3>Ambulance Response Time by Decile</h3>
       <div class="flex-row">
-        <div id="vis4"></div>
-        <p>This chart explores how socioeconomic disadvantage correlates with ambulance response times across Victoria. <br><br>
+        <div class="flex-column">
+          <div id="vis4"></div>
+          <div class="interactive-box">
+            <p><strong>How to Read This Chart</strong></p>
+            <p>The following plot displays ambulance response times for Victorian <br>
+              LGAs by SEIFA decile. Each box shows the range, spread, and median <br> 
+              of response times within a decile. Comparing boxes across deciles <br> 
+              highlights differences between disadvantaged and advantaged areas.
+            </p>
+          </div>
+        </div>
 
-          A clear pattern emerges — <strong>response times tend to be longer in more disadvantaged regions</strong>, with greater variability as well. This suggests that residents in lower-decile LGAs may face slower emergency response due to factors such as lower service density, resource constraints, or distance from urban centers.<br><br>
+        <p>This chart explores how socioeconomic disadvantage correlates with ambulance <br> 
+          response times across Victoria. <br><br>
 
-          By contrast, <strong>wealthier and more urban LGAs (higher deciles)</strong> generally report faster and more consistent response times, highlighting disparities in emergency care accessibility.
-          These findings reinforce the broader theme of <strong>unequal healthcare access</strong> and underscore the importance of equitable resource distribution across Victoria’s regions.
+          A clear pattern emerges — <strong>response times tend to be longer <br>
+            in more disadvantaged regions</strong>, with greater variability as well. <br>
+            This suggests that residents in lower-decile LGAs may face slower <br>
+            emergency response due to factors such as lower service density, <br>
+            resource constraints, or distance from urban centers.<br><br>
+
+          By contrast, <strong>wealthier and more urban LGAs (higher deciles)</strong> <br>
+          generally report faster and more consistent response times, highlighting <br>
+          disparities in emergency care accessibility. These findings reinforce the broader <br>
+          theme of <strong>unequal healthcare access</strong> and underscore the importance of <br>
+          equitable resource distribution across Victoria’s regions.
         </p>
+        
       </div>
     </div>
 
-    <!-- Visualisation 5: Admissions Over Time -->
-    <!-- <div class="vis-container">
-      <h2>5. Hospital Admissions Over Time</h2>
-      <div id="vis5"></div>
-    </div> -->
+    <!-- Visualisation 5: Hospital Density by SEIFA Decile -->
+    <div class="vis-container">
+      <h3>Hospital Accessibility Across SEIFA Deciles</h3>
+      <div class="flex-row">
+        <div class="flex-column">
+          <div id="vis5"></div>
+          <div class="interactive-box">
+            <p><strong>How to Read This Chart</strong></p>
+            <p>
+            This scatter plot summarises hospital density (hospitals/square kilometre) <br>
+            for Victorian LGAs grouped by SEIFA decile. Each point summarises <br>
+            hospital density within a specific socioeconomic decile. The y-axis <br>
+            represents relative advantage (higher decile = more advantage), and the <br>
+            x-axis shows hospital density. Comparing these helps identify patterns or <br>
+            differences in hospital accessibility across socioeconomic groups.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <strong>How Strongly Does Disadvantage Affect Hospital Accessibility?</strong><br>
+          The plot shows that higher SEIFA decile areas do not <br>
+          always correspond to greater hospital density; there are <br>
+          several affluent LGAs with low density. <br><br>
+          However, as decile increases, there is more variation in <br>
+          hospital density: decile 2 LGAs consistently have very low hospital <br>
+          density (below 0.05), while deciles 7 and above show some LGAs <br>
+          with substantially higher densities. <br><br>
+          Thus, though the relationship between geographic advantage and hospital <br>
+          access may be inconsistent, geographic factors remain an important influence.
+        </p>
+      </div>
+    </div>
 
     <footer>
       <p>Author: Virani Aboetan. <br>

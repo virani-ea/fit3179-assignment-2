@@ -3,7 +3,7 @@
   "description": "Choropleth of SEIFA (IRSD) by LGA in Victoria",
   "background": "white",
   "padding": 5,
-  "width": 550,
+  "width": 570,
   "height": 650,
   "style": "view",
   "data": [
