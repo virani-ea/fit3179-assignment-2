@@ -113,23 +113,25 @@
             </p>
           </div>
         </div>
+        <div class="flex-column">
+          <p>This chart explores how socioeconomic disadvantage correlates with ambulance <br> 
+            response times across Victoria. <br><br>
 
-        <p>This chart explores how socioeconomic disadvantage correlates with ambulance <br> 
-          response times across Victoria. <br><br>
+            A clear pattern emerges — <strong>response times tend to be longer <br>
+              in more disadvantaged regions</strong>, with greater variability as well. <br>
+              This suggests that residents in lower-decile LGAs may face slower <br>
+              emergency response due to factors such as lower service density, <br>
+              resource constraints, or distance from urban centers.<br><br>
 
-          A clear pattern emerges — <strong>response times tend to be longer <br>
-            in more disadvantaged regions</strong>, with greater variability as well. <br>
-            This suggests that residents in lower-decile LGAs may face slower <br>
-            emergency response due to factors such as lower service density, <br>
-            resource constraints, or distance from urban centers.<br><br>
+            By contrast, <strong>wealthier and more urban LGAs (higher deciles)</strong> <br>
+            generally report faster and more consistent response times, highlighting <br>
+            disparities in emergency care accessibility. These findings reinforce the broader <br>
+            theme of <strong>unequal healthcare access</strong> and underscore the importance of <br>
+            equitable resource distribution across Victoria’s regions.
+          </p>
 
-          By contrast, <strong>wealthier and more urban LGAs (higher deciles)</strong> <br>
-          generally report faster and more consistent response times, highlighting <br>
-          disparities in emergency care accessibility. These findings reinforce the broader <br>
-          theme of <strong>unequal healthcare access</strong> and underscore the importance of <br>
-          equitable resource distribution across Victoria’s regions.
-        </p>
-        
+          <img src="./images/ambulance.png" alt="Ambulance" style="max-width: 30%; height: auto; display: block; margin-top: 20px;">
+        </div>
       </div>
     </div>
 
@@ -151,25 +153,31 @@
             </p>
           </div>
         </div>
+        <div class="flex-column">
+          <p>
+            <strong>How Strongly Does Disadvantage Affect Hospital Accessibility?</strong><br>
+            The plot shows that higher SEIFA decile areas do not <br>
+            always correspond to greater hospital density; there are <br>
+            several affluent LGAs with low density. <br><br>
+            However, as decile increases, there is more variation in <br>
+            hospital density: decile 2 LGAs consistently have very low hospital <br>
+            density (below 0.05), while deciles 7 and above show some LGAs <br>
+            with substantially higher densities. <br><br>
+            Thus, though the relationship between geographic advantage and hospital <br>
+            access may be inconsistent, geographic factors remain an important influence.
+          </p>
 
-        <p>
-          <strong>How Strongly Does Disadvantage Affect Hospital Accessibility?</strong><br>
-          The plot shows that higher SEIFA decile areas do not <br>
-          always correspond to greater hospital density; there are <br>
-          several affluent LGAs with low density. <br><br>
-          However, as decile increases, there is more variation in <br>
-          hospital density: decile 2 LGAs consistently have very low hospital <br>
-          density (below 0.05), while deciles 7 and above show some LGAs <br>
-          with substantially higher densities. <br><br>
-          Thus, though the relationship between geographic advantage and hospital <br>
-          access may be inconsistent, geographic factors remain an important influence.
-        </p>
+          <img src="./images/hospital.png" alt="Hospital" style="max-width: 50%; height: auto; display: block; margin-top: 20px;">
+        </div>
       </div>
     </div>
 
     <footer>
       <p>Author: Virani Aboetan. <br>
-        Data sources: AIHW MyHospitals API, ABS Census, Victorian Health Services (VAHI). <br>
+        Data sources: <a href=https://myhospitalsapi.aihw.gov.au/index.html>AIHW MyHospitals API</a>, ABS Census 
+        <a href="https://www.abs.gov.au/statistics/people/population/regional-population/2023-24#data-downloads">Population</a> & 
+        <a href="https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release#data-downloads">SEIFA</a> Data, 
+        <a href="https://vahi.vic.gov.au/ambulance-services/high-priority-time-critical-incidents-priority-code-1">Victorian Health Services (VAHI)</a>. <br>
         Visualisation built with Vega-Lite.</p>
     </footer>
   </div>

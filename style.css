@@ -43,7 +43,7 @@ p {
 footer {
   text-align: center;
   margin-top: 60px;
-  color: #7f8c8d;
+  color: #727575;
   font-size: 0.9em;
 }
 
@@ -59,7 +59,7 @@ footer {
   flex-direction: column;
   gap: 30px;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
 }
 
 #lga-seifa-output,
@@ -81,4 +81,7 @@ footer {
 }
 #vg-tooltip-element {
   font-size: 18px;
+}
+a {
+  color: #4f5252;
 }
