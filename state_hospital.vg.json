@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Hospitals per 100,000 people by state/territory (public only, 2024)",
-  "width": 630,
-  "height": 470,
+  "width": 525,
+  "height": 365,
   "data": {
     "values": [
       {"State":"NSW","HospitalsPer100k":2.6},

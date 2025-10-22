@@ -6,7 +6,7 @@ body {
   padding: 20px;
 }
 .container {
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 header {
@@ -15,17 +15,17 @@ header {
 }
 h1 {
   color: #1f77b4;
-  font-size: 3em;
+  font-size: 2.8em;
 }
 h2 {
-  font-size: 2.2em;
+  font-size: 2.0em;
   text-align: center;
 }
 h3 {
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 p {
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 .vis-container {
   margin-bottom: 50px;
@@ -59,7 +59,7 @@ footer {
   flex-direction: column;
   gap: 30px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
 }
 
 #lga-seifa-output,
@@ -84,4 +84,12 @@ footer {
 }
 a {
   color: #4f5252;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
 }
